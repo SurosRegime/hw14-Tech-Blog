@@ -21,7 +21,7 @@ async function loginFormHandler(event) {
           openAlertModal();
         }
       }
-    }
+    };
 
     async function signupFormHandler(event) {
         event.preventDefault();
@@ -48,4 +48,7 @@ async function loginFormHandler(event) {
             openAlertModal();
           }
         }
-    }
+    };
+
+    document.getElementById('login-form').addEventListener('submit', loginFormHandler);
+    document.getElementById('signup-form').addEventListener('submit', signupFormHandler);
