@@ -1,22 +1,22 @@
 async function loginFormHandler(event) {
     event.preventDefault();
 
-    const email = document.querySelector("#email-login").value.trim();
-    const password = document.querySelector("#password-login").value.trim();
+    const email = document.querySelector('#email-login').value.trim();
+    const password = document.querySelector('#password-login').value.trim();
 
     if (email && password) {
-        const response = await fetch("/api/users/login", {
-          method: "post",
+        const response = await fetch('/api/users/login', {
+          method: 'post',
           body: JSON.stringify({
             email,
             password,
           }),
-          headers: { "Content-Type": "application/json" },
+          headers: { 'Content-Type': 'application/json' },
         });
     
         // check response status
         if (response.ok) {
-          document.location.replace("/dashboard/");
+          document.location.replace('/dashboard/');
         } else {
           openAlertModal();
         }
@@ -31,19 +31,19 @@ async function loginFormHandler(event) {
         const password = document.querySelector('#password-signup').value.trim();
 
         if(username && email && password){
-            const response = await fetch("/api/users", {
-                method: "post",
+            const response = await fetch('/api/users', {
+                method: 'post',
                 body: JSON.stringify({
                   username,
                   email,
                   password,
                 }),
-                headers: { "Content-Type": "application/json" },
+                headers: { 'Content-Type': 'application/json' },
               });
 
               // check response status
         if (response.ok) {
-            document.location.replace("/dashboard/");
+            document.location.replace('/dashboard/');
           } else {
             openAlertModal();
           }
