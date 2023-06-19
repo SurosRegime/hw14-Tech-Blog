@@ -1,5 +1,5 @@
-async function loginFormHandler(event) {
-    event.preventDefault();
+const loginFormHandler = async (event) => {
+  event.preventDefault();
 
     const email = document.querySelector('#email-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
@@ -18,12 +18,12 @@ async function loginFormHandler(event) {
         if (response.ok) {
           document.location.replace('/dashboard/');
         } else {
-          openAlertModal();
+          alert('Login failed');
         }
       }
     };
 
-    async function signupFormHandler(event) {
+    const signupFormHandler = async (event) => {
         event.preventDefault();
 
         const username = document.querySelector('#username-signup').value.trim();
@@ -45,7 +45,7 @@ async function loginFormHandler(event) {
         if (response.ok) {
             document.location.replace('/dashboard/');
           } else {
-            openAlertModal();
+            alert('Invalid password or e-mail');
           }
         }
     };
